@@ -126,6 +126,7 @@ if ($db->lastErrorCode()){
     $msg="Thank you for signing our CLA, $name.";
 }
 
+$db->close();
 // if we have all our marketo needs
 if (class_exists('MarketoApiService') && defined('MARKETO_ACCESS_KEY') && defined('MARKETO_SECRET_KEY') && defined('SOAP_ENDPOINT')){
     send_marketo_lead(MARKETO_ACCESS_KEY,MARKETO_SECRET_KEY,SOAP_ENDPOINT,$email,$name,$company,$phone,$addr,$country,$state,$role,$github_user);
