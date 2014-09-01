@@ -20,6 +20,7 @@ Requirements
 - SQLite3
 - SQLite3 PHP extension
 - An MTA
+- Optionally, to convert HTML to PDF - http://phptopdf.com 
 
 Bundled third party software
 ============================
@@ -27,5 +28,6 @@ Bundled third party software
 * SignaturePad [http://thomasjbradley.ca/lab/signature-pad]
 * SigToSvg [http://thomasjbradley.ca/lab/signature-pad]
 * PHPMailer [https://github.com/PHPMailer/PHPMailer/]
-* Optionally: to convert HTML to PDF - http://phptopdf.com 
+
+
 
