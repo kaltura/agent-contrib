@@ -4,6 +4,7 @@ define ('DBFILE','/opt/cla/db/cla.db');
 define ('BASE_URL','http://cla.app.com/');
 
 // for Marketo intg. not mandatory, leave empty if you do not need this functionality
+// replace the attributr names with what your marketo instance has setup.
 define ('MARKETO_ACCESS_KEY', '');
 define ('MARKETO_SECRET_KEY', '');
 define ('SOAP_ENDPOINT','https://na-g.marketo.com/soap/mktows/1_3');
@@ -15,6 +16,7 @@ define ('MARKETO_COUNTRY_ATTRIB','Country');
 define ('MARKETO_STATE_ATTRIB','State');
 define ('MARKETO_ROLE_ATTRIB','Title');
 define ('MARKETO_GITHUB_ATTRIB','github_user');
+define ('MARKETO_LEAD_ORIGIN','lead_origin');
 
 // for generating a PDF, can be left empty, in which event, an HTML formatted agreement and signature will be mailed instead of a PDF.
 // You can obtain a free account here: http://phptopdf.com

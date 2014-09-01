@@ -41,7 +41,7 @@ $attributes[] = $marketo->createAttribute(MARKETO_COUNTRY_ATTRIB,$country );
 $attributes[] = $marketo->createAttribute(MARKETO_STATE_ATTRIB,$state );
 $attributes[] = $marketo->createAttribute(MARKETO_GITHUB_ATTRIB,$github_user );
 $attributes[] = $marketo->createAttribute(MARKETO_ROLE_ATTRIB,$role );
-$attributes[] = $marketo->createAttribute('Community_Lead_Type__c','CLA' );
+$attributes[] = $marketo->createAttribute(MARKETO_LEAD_ORIGIN,'CLA' );
 
 $leadRecord->leadAttributeList->attribute = $attributes;
 
