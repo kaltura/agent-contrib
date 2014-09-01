@@ -119,10 +119,12 @@ $query="insert into contribers values(NULL,'$name','$email','$phone','$addr','$c
 $db->exec($query);
 if ($db->lastErrorCode()){
     $msg=json_encode('ERROR: #' . $db->lastErrorCode() . ' '.$db->lastErrorMsg().' :(');
+    $db->close();
+    die ($msg);
+    
 }else{
     $msg="Thank you for signing our CLA, $name.";
 }
-$db->close();
 
 // if we have all our marketo needs
 if (class_exists('MarketoApiService') && defined('MARKETO_ACCESS_KEY') && defined('MARKETO_SECRET_KEY') && defined('SOAP_ENDPOINT')){
