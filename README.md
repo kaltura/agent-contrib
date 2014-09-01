@@ -27,4 +27,5 @@ Bundled third party software
 * SignaturePad [http://thomasjbradley.ca/lab/signature-pad]
 * SigToSvg [http://thomasjbradley.ca/lab/signature-pad]
 * PHPMailer [https://github.com/PHPMailer/PHPMailer/]
+* Optionally: to convert HTML to PDF - http://phptopdf.com 
 
