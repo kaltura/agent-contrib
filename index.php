@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Kaltura CLA</title>
+  <title>CLA</title>
 <link type="text/css" href="cla.css" rel="Stylesheet" />
   <link href="assets/jquery.signaturepad.css" rel="stylesheet">
   <!--[if lt IE 9]><script src="../assets/flashcanvas.js"></script><![endif]-->
@@ -79,6 +79,8 @@
 			return;
 	}
 	message.className='unhidden';
+	message.style.color = 'blue';
+	message.style.fontWeight="bold";
 	message.innerHTML = 'Please wait while processing...'; 
 	var name = document.getElementById('name').value;
 	var email = document.getElementById('email').value;

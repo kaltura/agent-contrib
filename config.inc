@@ -26,8 +26,9 @@ define ('MAIL_FROM','you@mail.com');
 define ('REPLY_TO','you@mail.com');
 define ('REPLY_TO_DISPLAY_NAME','Your org');
 define ('SUBJECT','CLA');
-define ('HTML2PDF_TEMPLATE','cla_template.html');
+define ('HTML2PDF_TEMPLATE','cla.html');
 define ('HTML_BODY_TEMPLATE','mail_template.html');
+define ('HTML_CONTRIBUTER_INFO','contributer_info.html');
 define ('IMAGE_DIR','/opt/cla/sigs');
 define ('OUT_DIR','/opt/cla_data/out');
 // you can add as many mail address as you wish here..

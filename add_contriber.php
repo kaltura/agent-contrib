@@ -69,7 +69,7 @@ function generate_pdf_cla($html_code,$out_dir,$out_file_name)
 function replace_template_tokens($tokens=array())
 {
 	$html_string=file_get_contents(HTML2PDF_TEMPLATE);
-
+	$html_string.=file_get_contents(HTML_CONTRIBUTER_INFO);
 	foreach ($tokens as $key=>$val){
 		$html_string=str_replace('@@'.strtoupper($key).'@@',$tokens[$key],$html_string);
 	}
@@ -123,7 +123,7 @@ if ($db->lastErrorCode()){
     die ($msg);
     
 }else{
-    $msg="Thank you for signing our CLA, $name.";
+    $msg="Thank you for signing our CLA, $name.<br>An email will be sent to $email with the signed contract.";
 }
 
 $db->close();
