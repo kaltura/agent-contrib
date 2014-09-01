@@ -5,7 +5,7 @@ Conrtibutor License Agreement system
 
 License
 =======
-AGPL v3 []
+AGPL v3 [http://www.gnu.org/licenses/agpl-3.0.html]
 
 Features
 ========
