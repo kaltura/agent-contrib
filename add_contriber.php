@@ -138,7 +138,7 @@ $url_of_sig_svg=BASE_URL."/$image_base/$email.svg";
 file_put_contents(IMAGE_DIR.DIRECTORY_SEPARATOR."$email.svg",$svg);
 $tokens=array('name'=>$name,'email'=>$email,'phone'=>$phone,'addr'=>$addr,'country'=>$country,'company'=>$company,'state'=>$state,'zip'=>$zip,'url_of_sig_svg'=>$url_of_sig_svg,'github_user'=>$github_user,'role'=>$role,'date'=>date('D'.", " .'M'." " .'d'. ", ".'Y'));
 $new_html=replace_template_tokens($tokens);
-file_put_contents("/tmp/$email.html",$new_html);
+file_put_contents(OUT_DIR.DIRECTORY_SEPARATOR."$email.html",$new_html);
 $body=file_get_contents(HTML_BODY_TEMPLATE);
 
 // do we have the ability to covert to PDF?

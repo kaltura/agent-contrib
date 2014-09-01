@@ -12,5 +12,8 @@ Note: it should be OUTSIDE your document root for security reasons.
 
 4. Edit add_contributer.php and sigToSvg.php changing to path to config.inc
 
-5. Edit cla_template.html and mail_template.html  
+5. Create a directory to contain the outputted PDF and HTML docs
+Note: it should be OUTSIDE your document root for security reasons but need to have write permissions for $APACHE_USER.
+
+6. Edit cla_template.html and mail_template.html  
 
