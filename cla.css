@@ -1,0 +1,30 @@
+.hidden { display: none; }
+.unhidden { display: block; }
+.fl { float: left; margin-bottom:15px;}
+.fd { clear: left; margin-bottom:15px;}
+/* Slider */
+div.k-slider {
+  position: relative;
+  border-width: 0;
+ /* background-color: transparent;*/
+background-color:white;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* button */
+.k-button {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 7px 2px;
+  font-family: inherit;
+  line-height: 1.66em;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
