@@ -3,7 +3,7 @@ define ('DBFILE','/opt/cla/db/cla.db');
 // full path to the dir where the index.html is.
 define ('BASE_URL','http://cla.app.com/');
 
-// for Marketo intg. not mandatory
+// for Marketo intg. not mandatory, leave empty if you do not need this functionality
 define ('MARKETO_ACCESS_KEY', '');
 define ('MARKETO_SECRET_KEY', '');
 define ('SOAP_ENDPOINT','https://na-g.marketo.com/soap/mktows/1_3');
@@ -26,7 +26,7 @@ define ('MAIL_FROM','you@mail.com');
 define ('REPLY_TO','you@mail.com');
 define ('REPLY_TO_DISPLAY_NAME','Your org');
 define ('SUBJECT','CLA');
-define ('HTML2PDF_TEMPLATE','pdf_template.html');
+define ('HTML2PDF_TEMPLATE','cla_template.html');
 define ('HTML_BODY_TEMPLATE','mail_template.html');
 define ('IMAGE_DIR','/opt/cla/sigs');
 define ('OUT_DIR','/opt/cla_data/out');
