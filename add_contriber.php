@@ -5,8 +5,10 @@ if (file_exists('marketo/MktMktowsApiService.php')&& file_exists('marketo/Market
     require_once('marketo/MktMktowsApiService.php'); // for Marketo
     require_once('marketo/MarketoApiService.php'); // for Marketo
 }
+
+// You can obtain a free account here: http://phptopdf.com in order to convert to PDF, otherwise, the email will be sent as HTML instead.
 if (file_exists('phpToPDF.php')){
-require_once('phpToPDF.php') ; // convert HTML to PDF
+	require_once('phpToPDF.php') ; // convert HTML to PDF
 }
 require_once('class.phpmailer.php'); // mail file
 

@@ -17,3 +17,4 @@ Note: it should be OUTSIDE your document root for security reasons but need to h
 
 6. Edit cla.html and mail_template.html.
 
+7. Optional: In order to convert to PDF, obtain a free account here: http://phptopdf.com in order to convert to PDF, otherwise, the email will be sent as HTML instead of a PDF attachment.
