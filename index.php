@@ -124,11 +124,12 @@
     }
   </script>
 <?php echo file_get_contents('cla.html');?>
-
+<br>
+<br>
     <form method="post" action="javascript:add_contriber()" class="sigPad">
 <div id=\'add_form\'>
     <fieldset>
-	<legend>CLA</legend>
+	<legend>Please sign below</legend>
 	<ul>
 	    <li class="fl">
 		<label for="name">Name:</label>
@@ -136,7 +137,7 @@
 	    </li>
 
 	    <li class="fl">
-		<label for="email">email:</label>
+		<label for="email">Email:</label>
 		<input type="text" id="email" name="email" tabindex="20" autocomplete="on">
 	    </li>
 
@@ -160,15 +161,15 @@
 
 		
 	    <li class="fl">
-		<label for="zip">zipcode:</label>
+		<label for="zip">Zipcode:</label>
 		<input type="text" id="zip" name="zip" tabindex="70" autocomplete="on">
 	    </li>
 	    <li class="fl">
-		<label for="company">company:</label>
+		<label for="company">Company:</label>
 		<input type="text" id="company" name="company" tabindex="80" autocomplete="on">
 	    </li>
 	    <li class="fl">
-		<label for="role">role:</label>
+		<label for="role">Role:</label>
 		<input type="text" id="role" name="role" tabindex="90" autocomplete="on">
 	    </li>
 	    <li class="fl">
@@ -188,7 +189,11 @@
 	<!--div class="agree">
    <input type="checkbox" name="agree" id="agree" value="agree">I agree<br>
    </div-->
-    <button type="submit">Submit</button>
+    <p><b>By clicking submit you confirm that you agree to the terms and conditions of the
+Contributor License Agreement. This digital signature will generate a
+signed agreement that will be sent to your email address and saved for
+records.</b></p>
+    <button type="submit">I agree</button>
     </fieldset>
   </form>
     </div>

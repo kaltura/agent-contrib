@@ -5,10 +5,8 @@ if (file_exists('marketo/MktMktowsApiService.php')&& file_exists('marketo/Market
     require_once('marketo/MktMktowsApiService.php'); // for Marketo
     require_once('marketo/MarketoApiService.php'); // for Marketo
 }
-
-// You can obtain a free account here: http://phptopdf.com in order to convert to PDF, otherwise, the email will be sent as HTML instead.
-if (file_exists('phpToPDF.php')){
-	require_once('phpToPDF.php') ; // convert HTML to PDF
+if (file_exists('gen_pdf.php')){
+	require_once('gen_pdf.php') ; // convert HTML to PDF
 }
 require_once('class.phpmailer.php'); // mail file
 
@@ -41,7 +39,7 @@ $attributes[] = $marketo->createAttribute(MARKETO_COUNTRY_ATTRIB,$country );
 $attributes[] = $marketo->createAttribute(MARKETO_STATE_ATTRIB,$state );
 $attributes[] = $marketo->createAttribute(MARKETO_GITHUB_ATTRIB,$github_user );
 $attributes[] = $marketo->createAttribute(MARKETO_ROLE_ATTRIB,$role );
-$attributes[] = $marketo->createAttribute(MARKETO_LEAD_ORIGIN,'CLA' );
+$attributes[] = $marketo->createAttribute('Community_Lead_Type__c','CLA' );
 
 $leadRecord->leadAttributeList->attribute = $attributes;
 
@@ -62,9 +60,9 @@ catch(SoapFault $ex)
 
 }
 
-function generate_pdf_cla($html_code,$out_dir,$out_file_name)
+function generate_pdf_cla($html_code,$out_file_name)
 {
-    phptopdf_html($html_code,$out_dir, '/'.$out_file_name);
+    gen_pdf($html_code,$out_file_name);
     return $out_file_name;
 }
 
@@ -116,8 +114,9 @@ $image=$sigToSvg->getImage();
 $svg=SQLite3::escapeString($image);
 $github_user=SQLite3::escapeString($_POST['github_user']);
 $role=SQLite3::escapeString($_POST['role']);
+$signer_ip=$_SERVER['REMOTE_ADDR'];
 $db=new SQLite3(DBFILE) or die('Unable to connect to database '. DBFILE);
-$query="insert into contribers values(NULL,'$name','$email','$phone','$addr','$country','$state','$zip','$company','$svg','$github_user',DATE())";
+$query="insert into contribers values(NULL,'$name','$email','$phone','$addr','$country','$state','$zip','$company','$svg','$github_user',DATE(),'$signer_ip')";
 $db->exec($query);
 if ($db->lastErrorCode()){
     $msg=json_encode('ERROR: #' . $db->lastErrorCode() . ' '.$db->lastErrorMsg().' :(');
@@ -136,22 +135,22 @@ if (class_exists('MarketoApiService') && defined('MARKETO_ACCESS_KEY') && define
 
 
 $image_base=basename(IMAGE_DIR);
-$url_of_sig_svg=BASE_URL."/$image_base/$email.svg";
+$url_of_sig_svg="$image_base/$email.svg";
 file_put_contents(IMAGE_DIR.DIRECTORY_SEPARATOR."$email.svg",$svg);
-$tokens=array('name'=>$name,'email'=>$email,'phone'=>$phone,'addr'=>$addr,'country'=>$country,'company'=>$company,'state'=>$state,'zip'=>$zip,'url_of_sig_svg'=>$url_of_sig_svg,'github_user'=>$github_user,'role'=>$role,'date'=>date('D'.", " .'M'." " .'d'. ", ".'Y'));
+$tokens=array('name'=>$name,'email'=>$email,'phone'=>$phone,'addr'=>$addr,'country'=>$country,'company'=>$company,'state'=>$state,'zip'=>$zip,'url_of_sig_svg'=>$url_of_sig_svg,'github_user'=>$github_user,'role'=>$role,'country'=>$country,'date'=>$formatted_date);
 $new_html=replace_template_tokens($tokens);
 file_put_contents(OUT_DIR.DIRECTORY_SEPARATOR."$email.html",$new_html);
 $body=file_get_contents(HTML_BODY_TEMPLATE);
 
 // do we have the ability to covert to PDF?
 
-if (function_exists('phptopdf_html')){
-	generate_pdf_cla($new_html,OUT_DIR,"$email.pdf");
+if (function_exists('gen_pdf')){
 	$attachment=OUT_DIR.DIRECTORY_SEPARATOR."$email.pdf";
+	generate_pdf_cla($new_html,$attachment);
 
 // if not, lets send it in HTML
 }else{
-	$body=$body.'<br><br>'.file_get_contents("/tmp/$email.html").'<br><br>';
+	$body=$body.'<br><br>'.file_get_contents(OUT_DIR.DIRECTORY_SEPARATOR."$email.html").'<br><br>';
 	$attachment='';
 }
 $additional_recpts["$name"]=$email;

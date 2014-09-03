@@ -12,5 +12,7 @@ CREATE TABLE contribers
     svg VARCHAR(10000) NOT NULL,
     github_user VARCHAR(128),
     sign_time INTEGER NOT NULL,
+-- for supporting IPv6
+    signer_ip VARCHAR(45) NOT NULL,
     UNIQUE(email)
 );

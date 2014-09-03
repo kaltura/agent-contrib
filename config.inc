@@ -1,8 +1,5 @@
 <?php
 define ('DBFILE','/opt/cla/db/cla.db');
-// full path to the dir where the index.html is.
-define ('BASE_URL','http://cla.app.com/');
-
 // for Marketo intg. not mandatory, leave empty if you do not need this functionality
 // replace the attributr names with what your marketo instance has setup.
 define ('MARKETO_ACCESS_KEY', '');
@@ -18,10 +15,6 @@ define ('MARKETO_ROLE_ATTRIB','Title');
 define ('MARKETO_GITHUB_ATTRIB','github_user');
 define ('MARKETO_LEAD_ORIGIN','lead_origin');
 
-// for generating a PDF, can be left empty, in which event, an HTML formatted agreement and signature will be mailed instead of a PDF.
-// You can obtain a free account here: http://phptopdf.com
-define ('PHP2PDF_KEY','');
-define ('PHP2PDF_URL','http://phptopdf.com/urltopdf.php');
 
 // for sending the CLA contract by mail
 define ('MAIL_FROM','you@mail.com');
