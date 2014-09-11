@@ -20,7 +20,6 @@ Requirements
 - SQLite3
 - SQLite3 PHP extension
 - An MTA
-- Optionally, to convert HTML to PDF - http://phptopdf.com 
 
 
 Bundled third party software
