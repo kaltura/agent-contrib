@@ -31,4 +31,6 @@ Bundled third party software
 * PHPMailer [https://github.com/PHPMailer/PHPMailer/]
 * TCPDF [http://www.tcpdf.org/]
 
-
+Kaltura's CLA site
+==================
+https://agentcontribs.kaltura.org
