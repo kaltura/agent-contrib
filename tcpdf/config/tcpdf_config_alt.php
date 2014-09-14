@@ -216,6 +216,11 @@ define('K_TCPDF_CALLS_IN_HTML', true);
  * If true adn PHP version is greater than 5, then the Error() method throw new exception instead of terminating the execution.
  */
 define('K_TCPDF_THROW_EXCEPTION_ERROR', false);
+// for signing the PDF
+define ('SSL_CRT','');
+define ('SSL_PRIVATE_KEY','');
+define ('REASON','');
+define ('CONTACT_INFO','');
 
 //============================================================+
 // END OF FILE

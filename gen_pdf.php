@@ -6,6 +6,26 @@ function gen_pdf($html,$output_file_path)
 {
 	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
+// set these in tcpdf/config/tcpdf_config_alt.php if you want the doc to be SSL signed
+	if(is_readable(SSL_CRT) &&  is_readable(SSL_PRIVATE_KEY)){
+		// set certificate file
+		$certificate = 'file://'.SSL_CRT;
+		$privateKey = 'file://'.SSL_PRIVATE_KEY;
+		// set certificate file
+		//$certificate = 'file:///etc/ssl/certs/kaltura.crt';
+		//$privateKey = 'file:///etc/pki/tls/private/kaltura.key';
+
+		// set additional information
+		$info = array(
+			'Name' => PDF_CREATOR,
+			'Location' => '',
+			'Reason' => REASON,
+			'ContactInfo' => CONTACT_INFO,
+			);
+		// set document signature
+		$pdf->setSignature($certificate, $privateKey, 'cla', '', 1, $info);
+
+	}
 	// set document information
 	$pdf->SetCreator(PDF_CREATOR);
 	$pdf->SetAuthor(PDF_AUTHOR);
@@ -55,7 +75,7 @@ function gen_pdf($html,$output_file_path)
 	$pdf->AddPage();
 
 	// set text shadow effect
-	$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
+//	$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
 
 	// Print text using writeHTMLCell()
 	$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
