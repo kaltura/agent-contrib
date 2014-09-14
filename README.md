@@ -29,6 +29,8 @@ Bundled third party software
 * SigToSvg [http://thomasjbradley.ca/lab/signature-pad]
 * PHPMailer [https://github.com/PHPMailer/PHPMailer/]
 * TCPDF [http://www.tcpdf.org/]
+* JavaScript for auto changing 'State' selectbox according to country - Created by: Down Home Consulting [http://downhomeconsulting.com]
+
 
 Kaltura's CLA site
 ==================
