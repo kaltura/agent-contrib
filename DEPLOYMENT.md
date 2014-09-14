@@ -21,8 +21,11 @@ Note: it should be OUTSIDE your document root for security reasons but need to h
 
 * Edit tcpdf/config/tcpdf_config_alt.php to your liking. 
 If interested in SSL signing of PDF, make sure to set:
+
+```
 define ('SSL_CRT','');
 define ('SSL_PRIVATE_KEY','');
 define ('REASON','');
 define ('CONTACT_INFO','');
+```
 
