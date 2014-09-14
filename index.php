@@ -153,13 +153,13 @@
 	    <li class="fl">
 <div class="form-item form-type-select form-item-country">
   <label for="edit-country">Country:</label>
-<select id="country" name="country" onchange="populateState()"></select>
+<select id="country" name="country" onchange="populateState()" tabindex="50"></select>
 </div>
 </li>
 	    <li class="fl">
 <div class="form-item form-type-select form-item-state">
   <label for="edit-state">State / Province </label>
-<select id="state" name="state"></select>
+<select id="state" name="state" tabindex="60"></select>
 </div>
 	    </li>
 <script type="text/javascript">initCountry(""); </script>
