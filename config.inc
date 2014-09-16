@@ -1,6 +1,5 @@
 <?php
 define ('DBFILE','/opt/cla/db/cla.db');
-define ('BASE_URL','http://yourclahost/');
 
 // for Marketo intg. not mandatory
 define ('MARKETO_ACCESS_KEY', '');
@@ -26,5 +25,5 @@ define ('HTML2PDF_TEMPLATE','pdf_template.html');
 define ('HTML_BODY_TEMPLATE','mail_template.html');
 define ('IMAGE_DIR','/opt/cla/sigs');
 define ('OUT_DIR','/opt/cla_data/out');
-$additional_recpts=array('Kaltura Legal'=>'jess.portnoy@kaltura.com','Kaltura Community'=>'jess.portnoy@kaltura.com');
+$additional_recpts=array('Legal'=>'legal@yours.com','Community'=>'Community@yours.com');
 ?>

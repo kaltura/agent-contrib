@@ -198,7 +198,7 @@
 	<!--div class="agree">
    <input type="checkbox" name="agree" id="agree" value="agree">I agree<br>
    </div-->
-    <p><b>By clicking submit you confirm that you agree to the terms and conditions of the
+    <p><b>By clicking 'I agree' you confirm that you agree to the terms and conditions of the
 Contributor License Agreement. This digital signature will generate a
 signed agreement that will be sent to your email address and saved in our
 records.</b></p>
