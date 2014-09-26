@@ -31,6 +31,15 @@ Bundled third party software
 * TCPDF [http://www.tcpdf.org/]
 * JavaScript for auto changing 'State' selectbox according to country - Created by: Down Home Consulting [http://downhomeconsulting.com]
 
+Deployment
+==========
+See DEPLOYMENT.md
+
+GitHub integration
+==================
+You can use whatever tool that monitors github hooks to integrate with this system, an example of one such tool and a hook can be found here:
+https://github.com/kaltura/github_hookies/blob/master/hooks/checkCLA.php
+
 
 Kaltura's CLA site
 ==================
