@@ -508,7 +508,8 @@ function populateCountry(defaultCountry) {
     lineArray = countryLineArray[loop].split(':');
     countryCode  = TrimString(lineArray[0]);
     countryName  = TrimString(lineArray[1]);
-    if ( countryCode != '' ) {
+    //if ( countryCode != '' ) {
+    if ( countryCode ) {
       selObj.options[loop + 1] = new Option(countryName, countryCode);
     }
     if ( defaultCountry == countryCode ) {
@@ -540,16 +541,18 @@ function populateState() {
   if (document.getElementById('country').value == countryCode && countryCode != '' ) {
     // If it's a input element, change it to a select
       if ( selObj.type == 'text' ) {
+	document.getElementById("statediv").style.visibility = "visible";
         parentObj = document.getElementById('state').parentNode;
         parentObj.removeChild(selObj);
         var inputSel = document.createElement("SELECT");
         inputSel.setAttribute("name","state");
         inputSel.setAttribute("id","state");
+	inputSel.className='w-select input-light';
         parentObj.appendChild(inputSel) ;
         selObj = document.getElementById('state');
         selObj.options[0] = new Option('Select State','');
         selObj.selectedIndex = 0;
-      }
+	}
       if ( stateCode != '' ) {
         selObj.options[optionCntr] = new Option(stateName, stateCode);
       }
@@ -563,6 +566,8 @@ function populateState() {
   }
   // If the country has no states, change the select to a text box
   if ( ! foundState ) {
+
+	document.getElementById("statediv").style.visibility = "hidden";
     parentObj = document.getElementById('state').parentNode;
     parentObj.removeChild(selObj);
   // Create the Input Field
@@ -570,6 +575,7 @@ function populateState() {
     inputEl.setAttribute("id", "state");
     inputEl.setAttribute("type", "text");
     inputEl.setAttribute("name", "state");
+    inputEl.setAttribute("class", "w-input input-light");
     inputEl.setAttribute("size", 20);
     inputEl.setAttribute("value", postState);
     parentObj.appendChild(inputEl) ;
